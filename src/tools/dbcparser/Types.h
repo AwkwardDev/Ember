@@ -12,7 +12,7 @@
 #include <vector>
 #include <memory>
 
-namespace ember { namespace dbc { namespace types {
+namespace ember::dbc { namespace types {
 
 struct Struct;
 struct Enum;

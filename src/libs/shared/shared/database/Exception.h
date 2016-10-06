@@ -11,7 +11,7 @@
 #include <stdexcept>
 #include <string>
  
-namespace ember { namespace dal {
+namespace ember::dal {
 
 class exception : public std::runtime_error {
 public:

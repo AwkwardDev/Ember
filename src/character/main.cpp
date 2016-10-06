@@ -96,12 +96,12 @@ void launch(const po::variables_map& args, log::Logger* logger) try {
 	LOG_INFO_GLOB << "Compiling DBC regular expressions..." << LOG_ASYNC;
 	std::vector<ember::util::pcre::Result> profanity, reserved;
 
-	for(auto& i : dbc_store.names_profanity.values()) {
-		profanity.emplace_back(ember::util::pcre::utf8_jit_compile(i.name));
+	for(auto& [k, record] : dbc_store.names_profanity) {
+		profanity.emplace_back(ember::util::pcre::utf8_jit_compile(record.name));
 	}
 
-	for(auto& i : dbc_store.names_reserved.values()) {
-		reserved.emplace_back(ember::util::pcre::utf8_jit_compile(i.name));
+	for(auto& [k, record] : dbc_store.names_reserved) {
+		reserved.emplace_back(ember::util::pcre::utf8_jit_compile(record.name));
 	}
 
 	LOG_INFO(logger) << "Initialising database driver..." << LOG_SYNC;

@@ -8,7 +8,7 @@
 
 #include <spark/Utility.h>
 
-namespace ember { namespace spark { namespace detail {
+namespace ember::spark { namespace detail {
 
 std::vector<ServicesType> services_to_underlying(const std::vector<messaging::Service>& services) {
 	std::vector<ServicesType> ret;

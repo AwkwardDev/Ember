@@ -11,9 +11,9 @@
 #include <string>
 #include <cstddef>
 
-namespace ember { namespace util {
+namespace ember::util {
 
 std::size_t max_consecutive_check(const std::string& name);
 void set_window_title(const std::string& title);
 
-}} // util, ember
+} // util, ember

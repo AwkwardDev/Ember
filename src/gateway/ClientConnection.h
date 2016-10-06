@@ -103,7 +103,7 @@ public:
 	void close_session();
 	void terminate();
 
-	static void async_shutdown(std::shared_ptr<ClientConnection> test);
+	static void async_shutdown(std::unique_ptr<ClientConnection> test);
 };
 
 } // ember

@@ -10,14 +10,14 @@
 #include "TypeUtils.h"
 #include "Types.h"
 #include <logger/Logging.h>
-#include <boost/filesystem.hpp>
+#include <filesystem>
 #include <regex>
 #include <vector>
 #include <fstream>
 #include <sstream>
 #include <iostream>
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 void generate_disk_struct_recursive(const types::Struct& def, std::stringstream& definitions, int indent);
 void generate_disk_struct(const types::Struct& def, std::stringstream& definitions, int indent);
@@ -47,7 +47,7 @@ public:
 	}
 };
 
-boost::optional<std::string> locate_type(const types::Struct& base, const std::string& type_name) {
+std::optional<std::string> locate_type(const types::Struct& base, const std::string& type_name) {
 	LOG_TRACE_GLOB << __func__ << LOG_ASYNC;
 
 	for(auto& f : base.children) {
@@ -57,7 +57,7 @@ boost::optional<std::string> locate_type(const types::Struct& base, const std::s
 	}
 
 	if(base.parent == nullptr) {
-		return boost::none;
+		return std::none;
 	}
 
 	return locate_type(static_cast<types::Struct&>(*base.parent), type_name);
@@ -143,7 +143,7 @@ void generate_linker(const types::Definitions& defs, const std::string& output, 
 		call << "\t" << "detail::link_" << store_name << "(storage);" << std::endl;
 		
 		func << "void link_" << store_name << "(Storage& storage) {" << std::endl;
-		func << "\t" << "for(auto& i : storage." << store_name << ".values()) {" << std::endl;
+		func << "\t" << "for(auto& [k, i] : storage." << store_name << ") {" << std::endl;
 
 		for(auto& f : dbc->fields) {
 			std::stringstream curr_field;
@@ -642,4 +642,4 @@ void generate_disk_source(const types::Definitions& defs, const std::string& out
 	generate_disk_loader(defs, output, template_path);
 }
 
-}} // dbc, ember
+} // dbc, ember

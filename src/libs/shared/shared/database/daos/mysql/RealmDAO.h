@@ -16,7 +16,7 @@
 #include <cppconn/prepared_statement.h>
 #include <memory>
 
-namespace ember { namespace dal { 
+namespace ember::dal { 
 
 using namespace std::chrono_literals;
 
@@ -54,7 +54,7 @@ public:
 		throw exception(e.what());
 	}
 
-	boost::optional<Realm> get_realm(std::uint32_t id) const override final try {
+	std::optional<Realm> get_realm(std::uint32_t id) const override final try {
 		const std::string query = "SELECT id, name, ip, type, flags, category, "
 		                          "region, creation_setting, population FROM realms "
 		                          "WHERE id = ?";
@@ -77,7 +77,7 @@ public:
 			return temp;
 		}
 
-		return boost::none;
+		return std::none;
 	} catch(std::exception& e) {
 		throw exception(e.what());
 	}

@@ -12,7 +12,7 @@
 #include <string>
 #include <ctime>
 
-namespace ember { namespace log { 
+namespace ember::log { 
 
 Severity severity_string(const std::string& severity);
 

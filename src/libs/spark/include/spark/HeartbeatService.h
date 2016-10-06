@@ -18,7 +18,7 @@
 #include <mutex>
 #include <set>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class Service;
 

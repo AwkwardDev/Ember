@@ -15,7 +15,7 @@
 #include <boost/serialization/strong_typedef.hpp>
 #include <cstddef>
  
-namespace ember { namespace srp6 {
+namespace ember::srp6 {
 	
 BOOST_STRONG_TYPEDEF(std::vector<Botan::byte>, SessionKey);
 

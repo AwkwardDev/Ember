@@ -11,7 +11,7 @@
 #include <spark/Link.h>
 #include <spark/temp/MessageRoot_generated.h>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class EventHandler {
 public:
@@ -21,4 +21,4 @@ public:
 	virtual ~EventHandler() = default;
 };
 
-}} // spark, ember
+} // spark, ember

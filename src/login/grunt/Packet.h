@@ -12,7 +12,7 @@
 #include <spark/BinaryStream.h>
 #include <spark/SafeBinaryStream.h>
 
-namespace ember { namespace grunt {
+namespace ember::grunt {
 
 struct Packet {
 	enum class State {

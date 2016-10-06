@@ -9,7 +9,7 @@
 #include "UTF8.h"
 #include <utf8cpp/utf8.h>
 
-namespace ember { namespace util { namespace utf8 {
+namespace ember::util { namespace utf8 {
 
 std::size_t length(const std::string& utf8_string, bool& valid) try {
 	valid = true;

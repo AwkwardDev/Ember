@@ -13,7 +13,7 @@
 #include <cstdint>
 #include <cstddef>
 
-namespace ember { namespace client_integrity {
+namespace ember::client_integrity {
 
 Botan::secure_vector<Botan::byte> checksum(const Botan::secure_vector<Botan::byte>& seed,
                                            const std::vector<char>* buffer);
@@ -21,4 +21,4 @@ Botan::secure_vector<Botan::byte> checksum(const Botan::secure_vector<Botan::byt
 Botan::secure_vector<Botan::byte> finalise(const Botan::secure_vector<Botan::byte>& checksum,
                                            const std::uint8_t* seed, std::size_t len);
 
-}} // client_integrity, ember
+} // client_integrity, ember

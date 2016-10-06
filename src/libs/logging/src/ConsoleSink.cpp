@@ -15,7 +15,7 @@
 #include <string>
 #include <cstdio>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 void ConsoleSink::batch_write(const std::vector<std::pair<RecordDetail, std::vector<char>>>& records) {
 	if(!colour_) {
@@ -111,4 +111,4 @@ void ConsoleSink::set_colour(Severity severity) {
 	}
 }
 
-}} //log, ember
+} //log, ember

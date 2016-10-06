@@ -12,7 +12,7 @@
 
 namespace ember {
 
-void SessionManager::start(std::shared_ptr<ClientConnection> session) {
+void SessionManager::start(std::unique_ptr<ClientConnection> session) {
 	std::lock_guard<std::mutex> guard(sessions_lock_);
 
 	auto handle = session.get();
@@ -27,7 +27,7 @@ void SessionManager::stop(ClientConnection* session) {
 		return session == value.get();
 	});
 
-	ClientConnection::async_shutdown(*it);
+	ClientConnection::async_shutdown(std::move(sessions_.extract(it))); // todo
 	sessions_.erase(it);
 
 }
@@ -35,8 +35,8 @@ void SessionManager::stop(ClientConnection* session) {
 void SessionManager::stop_all() {
 	std::lock_guard<std::mutex> guard(sessions_lock_);
 	
-	for(auto& client : sessions_) {
-		ClientConnection::async_shutdown(client);
+	for(auto it = sessions_.begin(); it != sessions_.end(); ++it) {
+		ClientConnection::async_shutdown(std::move(sessions_.extract(it))); // todo
 	}
 
 	sessions_.clear();

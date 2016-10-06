@@ -18,7 +18,7 @@ using Botan::secure_vector;
 using Botan::power_mod;
 using Botan::AutoSeeded_RNG;
 
-namespace ember { namespace srp6 {
+namespace ember::srp6 {
 
 Client::Client(std::string identifier, std::string password, Generator gen, std::size_t key_size, bool srp6a)
                : Client(std::move(identifier), std::move(password), gen,

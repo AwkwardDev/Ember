@@ -9,7 +9,7 @@
 #include <logger/Worker.h>
 #include <iterator>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 Worker::~Worker() {
 	if(!stop_) {
@@ -80,4 +80,4 @@ void Worker::stop() {
 	}
 }
 
-}} //log, ember
+} //log, ember

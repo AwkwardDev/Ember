@@ -21,7 +21,7 @@
 #include <shared/database/daos/UserDAO.h>
 #include <botan/bigint.h>
 #include <botan/secmem.h>
-#include <boost/optional.hpp>
+#include <optional>
 #include <fstream>
 #include <functional>
 #include <memory>
@@ -60,7 +60,7 @@ class LoginHandler {
 	const Patcher& patcher_;
 	const RealmList& realm_list_;
 	const dal::UserDAO& user_src_;
-	boost::optional<User> user_;
+	std::optional<User> user_;
 	Botan::BigInt server_proof_;
 	const std::string source_;
 	const AccountService& acct_svc_;

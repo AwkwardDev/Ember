@@ -10,7 +10,7 @@
 
 #include "SessionClose.h"
 
-namespace ember { namespace session_close {
+namespace ember::session_close {
 
 void enter(ClientContext* ctx) {
 	// don't care, for now
@@ -28,4 +28,4 @@ void exit(ClientContext* ctx) {
 	// don't care, for now
 }
 
-}} // session_close, ember
+} // session_close, ember

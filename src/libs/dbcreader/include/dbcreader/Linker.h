@@ -8,10 +8,10 @@
 
 #pragma once
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 struct Storage;
 
 void link(Storage& storage);
 
-}} // dbc, ember
+} // dbc, ember

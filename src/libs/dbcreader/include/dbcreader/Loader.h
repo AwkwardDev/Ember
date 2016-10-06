@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 struct Storage;
 
@@ -22,4 +22,4 @@ public:
 	virtual ~Loader() = default;
 };
 
-}} // dbc, ember
+} // dbc, ember

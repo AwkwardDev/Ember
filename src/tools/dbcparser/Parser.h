@@ -14,7 +14,7 @@
 #include <string>
 #include <vector>
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 class Parser {
 	static const int MAX_PARSE_DEPTH = 3;

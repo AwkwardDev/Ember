@@ -24,7 +24,7 @@
 
 namespace em = ember::messaging;
 
-namespace ember { namespace character_list {
+namespace ember::character_list {
 
 namespace {
 
@@ -258,4 +258,4 @@ void exit(ClientContext* ctx) {
 	}
 }
 
-}} // character_list, ember
+} // character_list, ember

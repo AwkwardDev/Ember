@@ -13,7 +13,7 @@
 #include <sstream>
 #include <ctime>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 namespace detail {
 

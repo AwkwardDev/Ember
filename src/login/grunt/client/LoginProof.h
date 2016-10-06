@@ -18,7 +18,7 @@
 #include <cstdint>
 #include <cstddef>
 
-namespace ember { namespace grunt { namespace client {
+namespace ember::grunt::client {
 
 class LoginProof final : public Packet {
 	enum class ReadState {
@@ -199,4 +199,4 @@ public:
 	}
 };
 
-}}} // client, grunt, ember
+} // client, grunt, ember

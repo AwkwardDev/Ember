@@ -11,7 +11,7 @@
 #include <memory>
 #include <vector>
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 template<typename T>
 struct TreeNode {

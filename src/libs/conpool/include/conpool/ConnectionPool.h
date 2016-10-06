@@ -15,7 +15,7 @@
 #include "LogSeverity.h"
 #include <shared/threading/Spinlock.h>
 #include <shared/threading/Semaphore.h>
-#include <boost/optional.hpp>
+#include <optional>
 #include <boost/assert.hpp>
 #include <utility>
 #include <functional>
@@ -29,7 +29,7 @@
 #include <vector>
 #include <cstddef>
 
-namespace ember { namespace connection_pool {
+namespace ember::connection_pool {
 
 namespace sc = std::chrono;
 using namespace std::chrono_literals;
@@ -127,7 +127,7 @@ class Pool : private ReusePolicy, private GrowthPolicy {
 		return false;
 	}
 	
-	boost::optional<Connection<ConType>> get_connection_attempt() {
+	std::optional<Connection<ConType>> get_connection_attempt() {
 #ifdef DEBUG_NO_THREADS
 		manager_.run();
 #endif
@@ -147,7 +147,7 @@ class Pool : private ReusePolicy, private GrowthPolicy {
 			});
 			
 			if(res == pool_.end()) {
-				return boost::none;
+				return std::none;
 			}
 		}
 
@@ -231,7 +231,7 @@ public:
 	}
 
 	Connection<ConType> get_connection() {
-		boost::optional<Connection<ConType>> conn(get_connection_attempt());
+		std::optional<Connection<ConType>> conn(get_connection_attempt());
 
 		if(!conn) {
 			throw no_free_connections();
@@ -247,7 +247,7 @@ public:
 	 * for reuse.
 	 */
 	Connection<ConType> wait_connection() {
-		boost::optional<Connection<ConType>> conn;
+		std::optional<Connection<ConType>> conn;
 		
 		while(!(conn = get_connection_attempt())) {
 			semaphore_.wait();
@@ -266,7 +266,7 @@ public:
 	 */
 	Connection<ConType> wait_connection(std::chrono::milliseconds duration) {
 		auto start = sc::high_resolution_clock::now();
-		boost::optional<Connection<ConType>> conn;
+		std::optional<Connection<ConType>> conn;
 
 		while(!(conn = get_connection_attempt())) {
 			sc::milliseconds elapsed = sc::duration_cast<sc::milliseconds>

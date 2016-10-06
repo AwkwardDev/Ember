@@ -32,14 +32,14 @@ class Service final : public spark::EventHandler {
 	void delete_character(const spark::Link& link, const messaging::MessageRoot* root);
 
 	void send_character_list(const spark::Link& link, const std::vector<std::uint8_t>& tracking,
-	                         const boost::optional<std::vector<Character>>& characters);
+	                         const std::optional<std::vector<Character>>& characters);
 
 	void send_response(const spark::Link& link, const std::vector<std::uint8_t>& tracking,
 	                   messaging::character::Status status, protocol::Result result);
 
 	void send_rename_response(const spark::Link& link, const std::vector<std::uint8_t>& tracking,
 	                          messaging::character::Status status, protocol::Result result,
-	                          boost::optional<Character> character);
+	                          std::optional<Character> character);
 
 public:
 	Service(dal::CharacterDAO& character_dao, const CharacterHandler& handler, spark::Service& spark,

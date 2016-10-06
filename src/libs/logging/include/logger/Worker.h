@@ -21,7 +21,7 @@
 #include <tuple>
 #include <condition_variable>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 class Worker final {
 	moodycamel::ConcurrentQueue<std::pair<RecordDetail, std::vector<char>>> queue_;
@@ -52,4 +52,4 @@ public:
 	}
 };
 
-}} //log, ember
+} //log, ember

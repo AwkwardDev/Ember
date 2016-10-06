@@ -14,7 +14,7 @@
 #include <botan/bigint.h>
 #include <cstddef>
 
-namespace ember { namespace srp6 {
+namespace ember::srp6 {
 
 class Server final {
 	const Botan::BigInt v_, N_, b_;

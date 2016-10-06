@@ -8,9 +8,9 @@
 
 #include <shared/Version.h>
 
-namespace ember { namespace version {
+namespace ember::version {
 
 const std::string GIT_HASH = "@GIT_SHA1@";
 const std::string VERSION = "@VERSION@";
 
-}}
+}

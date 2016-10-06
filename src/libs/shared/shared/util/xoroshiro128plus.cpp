@@ -27,7 +27,7 @@ See <http://creativecommons.org/publicdomain/zero/1.0/>. */
    a 64-bit seed, we suggest to seed a splitmix64 generator and use its
    output to fill s. */
 
-namespace ember { namespace rng { namespace xorshift {
+namespace ember::rng::xorshift {
 
 std::uint64_t seed[2];
 
@@ -71,4 +71,4 @@ void jump(void) {
 }
 
 
-}}} // xorshift, rng, ember
+} // xorshift, rng, ember

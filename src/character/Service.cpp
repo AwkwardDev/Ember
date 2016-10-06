@@ -92,7 +92,7 @@ void Service::create_character(const spark::Link& link, const em::MessageRoot* r
 }
 
 void Service::send_character_list(const spark::Link& link, const std::vector<std::uint8_t>& tracking,
-                                  const boost::optional<std::vector<Character>>& characters) {
+                                  const std::optional<std::vector<Character>>& characters) {
 	LOG_TRACE(logger_) << __func__ << LOG_ASYNC;
 
 	auto fbb = std::make_shared<flatbuffers::FlatBufferBuilder>();
@@ -155,7 +155,7 @@ void Service::send_character_list(const spark::Link& link, const std::vector<std
 
 void Service::send_rename_response(const spark::Link& link, const std::vector<std::uint8_t>& tracking,
 								   messaging::character::Status status, protocol::Result result,
-								   boost::optional<Character> character) {
+								   std::optional<Character> character) {
 	LOG_TRACE(logger_) << __func__ << LOG_ASYNC;
 
 	auto fbb = std::make_shared<flatbuffers::FlatBufferBuilder>();
@@ -238,7 +238,7 @@ void Service::rename_character(const spark::Link& link, const em::MessageRoot* r
 	}
 
 	handler_.rename(msg->account_id(), msg->character_id(), msg->name()->str(),
-	               [&, link, tracking](auto res, boost::optional<Character> character) {
+	               [&, link, tracking](auto res, std::optional<Character> character) {
 		LOG_DEBUG(logger_) << "Rename response code: " << protocol::to_string(res) << LOG_ASYNC;
 
 		send_rename_response(link, tracking, messaging::character::Status::OK, res, character);

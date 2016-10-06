@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <shared/smartenum.hpp>
 
-namespace ember { namespace protocol {
+namespace ember::protocol {
 
 smart_enum_class(ServerOpcodes, std::uint16_t,
 	SMSG_DBLOOKUP                                   = 0x003,
@@ -925,4 +925,4 @@ smart_enum_class(ClientOpcodes, std::uint32_t,
 	CMSG_ACCEPT_LEVEL_GRANT                         = 0x41F
 )
 
-}} // grunt, ember
+} // grunt, ember

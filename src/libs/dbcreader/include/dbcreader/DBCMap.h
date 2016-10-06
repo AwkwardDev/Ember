@@ -14,7 +14,7 @@
 #include <boost/container/flat_map.hpp>
 #include <boost/range/adaptor/map.hpp>
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 template<typename T>
 class DBCMap {
@@ -51,14 +51,6 @@ public:
 	inline auto end() {
 		return storage.end();
 	}
-
-	auto values() const {
-		return storage | boost::adaptors::map_values;
-	}
-
-	auto values()  {
-		return storage | boost::adaptors::map_values;
-	}
 };
 
-}} // dbc, ember
+} // dbc, ember

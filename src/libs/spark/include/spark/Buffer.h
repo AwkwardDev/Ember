@@ -13,7 +13,7 @@
 #include <utility>
 #include <cstddef>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class Buffer {
 public:
@@ -29,4 +29,4 @@ public:
 	virtual char& operator[](const std::size_t index) = 0;
 };
 
-}} // spark, ember
+} // spark, ember

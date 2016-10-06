@@ -26,7 +26,7 @@
 #include <string>
 #include <cstdint>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class Service final {
 	typedef std::shared_ptr<flatbuffers::FlatBufferBuilder> BufferHandler;
@@ -69,4 +69,4 @@ public:
 	void shutdown();
 };
 
-}} // spark, ember
+} // spark, ember

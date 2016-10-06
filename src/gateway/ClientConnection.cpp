@@ -301,10 +301,12 @@ void ClientConnection::terminate() {
  * until all pending handlers are executed with 'operation_aborted'.
  * That's the theory anyway.
  */
-void ClientConnection::async_shutdown(std::shared_ptr<ClientConnection> client) {
+void ClientConnection::async_shutdown(std::unique_ptr<ClientConnection> client) {
 	client->terminate();
 
-	client->service_.post([client]() {
+	std::shared_ptr<ClientConnection> shared(std::move(client));
+
+	client->service_.post([shared]() {
 		LOG_TRACE_FILTER_GLOB(LF_NETWORK) << "Handler for " << client->remote_address()
 			<< " destroyed" << LOG_ASYNC;
 	});

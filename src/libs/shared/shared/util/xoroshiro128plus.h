@@ -10,9 +10,9 @@ See <http://creativecommons.org/publicdomain/zero/1.0/>. */
 
 #include <cstdint>
 
-namespace ember { namespace rng { namespace xorshift {
+namespace ember::rng::xorshift {
 
 std::uint64_t next(void);
 extern std::uint64_t seed[2];
 
-}}} // xorshift, rng, ember
+} // xorshift, rng, ember

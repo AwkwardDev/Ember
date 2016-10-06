@@ -11,7 +11,7 @@
 #include <stdexcept>
 #include <string>
  
-namespace ember { namespace connection_pool {
+namespace ember::connection_pool {
 
 class exception : public std::runtime_error {
 public:

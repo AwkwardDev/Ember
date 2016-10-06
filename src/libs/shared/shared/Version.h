@@ -10,9 +10,9 @@
 
 #include <string>
 
-namespace ember { namespace version {
+namespace ember::version {
 
 extern const std::string GIT_HASH;
 extern const std::string VERSION;
 
-}} // version, ember
+} // version, ember

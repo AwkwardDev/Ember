@@ -12,7 +12,7 @@
 #include <vector>
 #include <cstdint>
 
-namespace ember { namespace spark { namespace detail {
+namespace ember::spark { namespace detail {
 
 typedef std::underlying_type<messaging::Service>::type ServicesType;
 

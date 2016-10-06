@@ -25,7 +25,7 @@
 #include <cstdint>
 #include <cstddef>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class ServiceDiscovery {
 	static const std::size_t BUFFER_SIZE = 1024;

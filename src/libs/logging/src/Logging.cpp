@@ -8,7 +8,7 @@
 
 #include <logger/Logging.h>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 namespace detail {
 
@@ -24,4 +24,4 @@ void set_global_logger(Logger* logger) {
 	detail::logger_ = logger;
 }
 
-}} //log, ember
+} //log, ember

@@ -21,7 +21,7 @@
  * The parsing for this packet is pretty verbose but I'm assuming that the data
  * from the server may be invalid (unlikely but better safe than sorry)
  */
-namespace ember { namespace grunt { namespace server {
+namespace ember::grunt::server {
 
 namespace be = boost::endian;
 
@@ -184,4 +184,4 @@ public:
 	}
 };
 
-}}} // server, grunt, ember
+} // server, grunt, ember

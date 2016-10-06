@@ -11,7 +11,7 @@
 #include "GameVersion.h"
 #include "grunt/Magic.h"
 #include "ExecutablesChecksum.h"
-#include <boost/optional.hpp>
+#include <optional>
 #include <string>
 #include <unordered_map>
 #include <cstdint>
@@ -31,7 +31,7 @@ class IntegrityData {
 public:
 	IntegrityData(const std::vector<GameVersion>& versions, const std::string& path);
 
-	boost::optional<const std::vector<char>*> lookup(GameVersion version, grunt::Platform platform,
+	std::optional<const std::vector<char>*> lookup(GameVersion version, grunt::Platform platform,
 	                                                 grunt::System os) const;
 };
 

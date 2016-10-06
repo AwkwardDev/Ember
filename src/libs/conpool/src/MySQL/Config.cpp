@@ -12,7 +12,7 @@
 #include <fstream>
 #include <cstdint>
 
-namespace ember { namespace drivers {
+namespace ember::drivers {
 
 namespace {
 

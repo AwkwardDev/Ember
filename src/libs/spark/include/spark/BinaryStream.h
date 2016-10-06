@@ -15,7 +15,7 @@
 #include <cstddef>
 #include <cstring>
 
-namespace ember { namespace spark{
+namespace ember::spark {
 
 class BinaryStream {
 	Buffer& buffer_;
@@ -99,4 +99,4 @@ public:
 	}
 };
 
-}} // spark, ember
+} // spark, ember

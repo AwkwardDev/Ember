@@ -16,7 +16,7 @@
 #include <cstdint>
 #include <cstddef>
 
-namespace ember { namespace grunt { namespace client {
+namespace ember::grunt::client {
 
 namespace be = boost::endian;
 
@@ -50,4 +50,4 @@ public:
 	}
 };
 
-}}} // client, grunt, ember
+} // client, grunt, ember

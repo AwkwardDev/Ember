@@ -12,7 +12,7 @@
 #include <regex>
 #include <cctype>
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 const std::unordered_map<std::string, int> type_size_map {
 	{ "int8",           1 },

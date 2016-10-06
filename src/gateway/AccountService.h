@@ -37,15 +37,15 @@ private:
 	void service_located(const messaging::multicast::LocateAnswer* message);
 
 	void handle_register_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-	                           boost::optional<const messaging::MessageRoot*> root,
+	                           std::optional<const messaging::MessageRoot*> root,
 	                           const RegisterCB& cb) const;
 
 	void handle_locate_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-	                         boost::optional<const messaging::MessageRoot*> root,
+	                         std::optional<const messaging::MessageRoot*> root,
 	                         const SessionLocateCB& cb) const;
 
 	void handle_id_locate_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-	                            boost::optional<const messaging::MessageRoot*> root,
+	                            std::optional<const messaging::MessageRoot*> root,
 	                            const IDLocateCB& cb) const;
 
 public:

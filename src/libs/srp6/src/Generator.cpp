@@ -10,7 +10,7 @@
 #include <boost/assert.hpp>
 #include <utility>
 
-namespace ember { namespace srp6 {
+namespace ember::srp6 {
 
 Generator::Generator(Group group) {
 	switch(group) {

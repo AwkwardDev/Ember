@@ -11,7 +11,7 @@
 #include <spark/Common.h>
 #include <spark/temp/Multicast_generated.h>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class ServiceListener {
 	ServiceDiscovery* sd_client_;
@@ -30,4 +30,4 @@ public:
 	friend class ServiceDiscovery;
 };
 
-}} // spark, ember
+} // spark, ember

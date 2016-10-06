@@ -15,7 +15,7 @@
 using Botan::byte;
 using Botan::secure_vector;
 
-namespace ember { namespace srp6 {
+namespace ember::srp6 {
 	
 namespace detail {
 

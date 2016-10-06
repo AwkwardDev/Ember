@@ -9,7 +9,7 @@
 #include <logger/FileSink.h>
 #include <logger/Exception.h>
 #define BOOST_FILESYSTEM_NO_DEPRECATED
-#include <boost/filesystem.hpp>
+#include <filesystem>
 #include <algorithm>
 #include <iterator>
 #include <limits>
@@ -18,7 +18,7 @@
 #pragma warning(push)
 #pragma warning(disable: 4996)
 
-namespace ember { namespace log {
+namespace ember::log {
 
 namespace fs = boost::filesystem;
 
@@ -208,6 +208,6 @@ void FileSink::write(Severity severity, Filter type, const std::vector<char>& re
 	}
 }
 
-}} //log, ember
+} //log, ember
 
 #pragma warning(pop)

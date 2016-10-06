@@ -10,7 +10,7 @@
 
 #include <cstddef>
 
-namespace ember { namespace connection_pool {
+namespace ember::connection_pool {
 
 class CheckoutClean {
 protected:

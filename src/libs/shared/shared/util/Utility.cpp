@@ -12,7 +12,7 @@
     #include <Windows.h>
 #endif
 
-namespace ember { namespace util {
+namespace ember::util {
 
 std::size_t max_consecutive_check(const std::string& name) {
 	int longest_sequence = 1;
@@ -50,4 +50,4 @@ void set_window_title(const std::string& title) {
 #endif
 }
 
-}} // util, ember
+} // util, ember

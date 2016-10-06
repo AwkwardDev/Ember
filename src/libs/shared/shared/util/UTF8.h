@@ -11,7 +11,7 @@
 #include <string>
 #include <cstddef>
 
-namespace ember { namespace util { namespace utf8 {
+namespace ember::util { namespace utf8 {
 
 std::size_t length(const std::string& utf8_string, bool& valid);
 bool is_valid(const std::string& utf8_string);

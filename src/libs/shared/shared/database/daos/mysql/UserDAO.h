@@ -17,7 +17,7 @@
 #include <chrono>
 #include <memory>
 
-namespace ember { namespace dal { 
+namespace ember::dal { 
 
 using namespace std::chrono_literals;
 
@@ -29,7 +29,7 @@ class MySQLUserDAO final : public UserDAO {
 public:
 	MySQLUserDAO(T& pool) : pool_(pool), driver_(pool.get_driver()) { }
 
-	boost::optional<User> user(const std::string& username) const override try {
+	std::optional<User> user(const std::string& username) const override try {
 		const std::string query = "SELECT u.username, u.id, u.s, u.v, u.pin_method, u.pin, "
 		                          "u.totp_key, b.user_id as banned, u.survey_request, u.subscriber, "
 		                          "s.user_id as suspended FROM users u "
@@ -51,7 +51,7 @@ public:
 			return user;
 		}
 
-		return boost::none;
+		return std::none;
 	} catch(std::exception& e) {
 		throw exception(e.what());
 	}
@@ -138,4 +138,4 @@ std::unique_ptr<MySQLUserDAO<T>> user_dao(T& pool) {
 	return std::make_unique<MySQLUserDAO<T>>(pool);
 }
 
-}} // dal, ember
+} // dal, ember

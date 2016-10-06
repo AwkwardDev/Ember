@@ -9,12 +9,12 @@
 #pragma once
 
 #include <spark/TrackingService.h>
-#include <boost/optional.hpp>
+#include <optional>
 #include <algorithm>
 
 namespace sc = std::chrono;
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 TrackingService::TrackingService(boost::asio::io_service& service, log::Logger* logger, log::Filter filter)
                                  : service_(service), logger_(logger), filter_(filter) { }
@@ -43,7 +43,7 @@ void TrackingService::handle_message(const Link& link, const messaging::MessageR
 		return;
 	}
 
-	handler->handler(link, uuid, boost::optional<const messaging::MessageRoot*>(message));
+	handler->handler(link, uuid, std::optional<const messaging::MessageRoot*>(message));
 } catch(std::out_of_range) {
 	LOG_DEBUG_FILTER(logger_, filter_)
 		<< "[spark] Received invalid or expired tracked message" << LOG_ASYNC;
@@ -76,7 +76,7 @@ void TrackingService::timeout(boost::uuids::uuid id, Link link, const boost::sys
 	handlers_.erase(id);
 	guard.unlock();
 
-	handler->handler(link, id, boost::optional<const messaging::MessageRoot*>());
+	handler->handler(link, id, std::optional<const messaging::MessageRoot*>());
 }
 
 void TrackingService::shutdown() {
@@ -87,4 +87,4 @@ void TrackingService::shutdown() {
 	}
 }
 
-}} // spark, ember
+} // spark, ember

@@ -12,7 +12,7 @@
 #include <stdexcept>
 #include <string>
  
-namespace ember { namespace grunt {
+namespace ember::grunt {
 
 class exception : public std::runtime_error {
 public:
@@ -25,4 +25,4 @@ public:
 	explicit bad_packet(const std::string& msg) : exception(msg) { }
 };
 
-}} // grunt, ember
+} // grunt, ember

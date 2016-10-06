@@ -27,7 +27,7 @@
 
 namespace em = ember::messaging;
 
-namespace ember { namespace authentication {
+namespace ember::authentication {
 
 void send_auth_challenge(ClientContext* ctx);
 void send_auth_result(ClientContext* ctx, protocol::Result result);
@@ -241,4 +241,4 @@ void exit(ClientContext* ctx) {
 	// don't care
 }
 
-}} // authentication, ember
+} // authentication, ember

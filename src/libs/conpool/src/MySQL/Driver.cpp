@@ -17,7 +17,7 @@
 #include <memory>
 #include <sstream>
 
-namespace ember { namespace drivers {
+namespace ember::drivers {
 
 MySQL::MySQL(std::string user, std::string pass, const std::string& host, unsigned short port,
              std::string db) : database(db), username(std::move(user)), password(std::move(pass)),

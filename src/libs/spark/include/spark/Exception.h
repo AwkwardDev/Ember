@@ -12,7 +12,7 @@
 #include <string>
 #include <cstddef>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class exception : public std::runtime_error {
 public:

@@ -14,7 +14,7 @@
 #include <functional>
 #include <type_traits>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 namespace bai = boost::asio::ip;
 
@@ -136,4 +136,4 @@ Service::~Service() {
 	dispatcher_.remove_handler(&track_service_);
 }
 
-}} // spark, ember
+} // spark, ember

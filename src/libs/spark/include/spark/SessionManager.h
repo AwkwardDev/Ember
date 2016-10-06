@@ -13,7 +13,7 @@
 #include <set>
 #include <cstddef>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class NetworkSession;
 
@@ -28,4 +28,4 @@ public:
 	std::size_t count() const;
 };
 
-}} // spark, ember
+} // spark, ember

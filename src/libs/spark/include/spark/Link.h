@@ -12,7 +12,7 @@
 #include <memory>
 #include <string>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class NetworkSession;
 
@@ -34,4 +34,4 @@ inline bool operator!=(const Link& lhs, const Link& rhs) {
 	return !(lhs == rhs);
 }
 
-}} // spark, ember
+} // spark, ember

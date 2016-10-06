@@ -42,15 +42,15 @@ private:
 	void service_located(const messaging::multicast::LocateAnswer* message);
 
 	void handle_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-	                  boost::optional<const messaging::MessageRoot*> root,
+	                  std::optional<const messaging::MessageRoot*> root,
 	                  const ResponseCB& cb) const;
 
 	void handle_retrieve_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-	                           boost::optional<const messaging::MessageRoot*> root,
+	                           std::optional<const messaging::MessageRoot*> root,
 	                           const RetrieveCB& cb) const;
 
 	void handle_rename_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-	                         boost::optional<const messaging::MessageRoot*> root,
+	                         std::optional<const messaging::MessageRoot*> root,
 	                         const RenameCB& cb) const;
 
 public:

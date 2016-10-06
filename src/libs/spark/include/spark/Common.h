@@ -11,10 +11,10 @@
 #include <functional>
 #include <spark/temp/MessageRoot_generated.h>
 #include <spark/temp/Multicast_generated.h>
-#include <boost/optional.hpp>
+#include <optional>
 #include <boost/uuid/uuid.hpp>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 struct Link;
 enum class LinkState;
@@ -24,8 +24,8 @@ class ServiceDiscovery;
 //namespace messaging { struct MessageRoot; }
 
 typedef std::function<void(const spark::Link&, const boost::uuids::uuid&,
-	boost::optional<const messaging::MessageRoot*>)> TrackingHandler;
+	std::optional<const messaging::MessageRoot*>)> TrackingHandler;
 typedef std::function<void(const Endpoint*)> ResolveCallback;
 typedef std::function<void(const messaging::multicast::LocateAnswer*)> LocateCallback;
 
-}} // spark, ember
+} // spark, ember

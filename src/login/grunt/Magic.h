@@ -13,7 +13,7 @@
 
  /* This file isn't as exciting as the name implies */
 
-namespace ember { namespace grunt {
+namespace ember::grunt {
 
 smart_enum_class(Game, std::uint32_t,
 	WoW = 'WoW'
@@ -39,4 +39,4 @@ smart_enum_class(Locale, std::uint32_t,
 	enTW = 'enTW', enCN = 'enCN'
 );
 
-}} // grunt, ember
+} // grunt, ember

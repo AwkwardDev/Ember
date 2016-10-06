@@ -11,7 +11,7 @@
 #include <stdexcept>
 #include <string>
  
-namespace ember { namespace log {
+namespace ember::log {
 
 class exception : public std::runtime_error {
 public:
@@ -19,4 +19,4 @@ public:
 	exception(std::string msg) : std::runtime_error(msg) { };
 };
 
-}} //log, ember
+} //log, ember

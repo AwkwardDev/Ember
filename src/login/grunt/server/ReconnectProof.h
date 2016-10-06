@@ -14,7 +14,7 @@
 #include <cstdint>
 #include <cstddef>
 
-namespace ember { namespace grunt { namespace server {
+namespace ember::grunt::server {
 
 class ReconnectProof final : public Packet {
 	static const std::size_t WIRE_LENGTH = 2;
@@ -45,4 +45,4 @@ public:
 	}
 };
 
-}}} // server, grunt, ember
+} // server, grunt, ember

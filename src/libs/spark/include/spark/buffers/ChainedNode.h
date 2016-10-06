@@ -12,7 +12,7 @@
 #include <array>
 #include <cstddef>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 struct ChainedNode {
 	ChainedNode* next;
@@ -128,4 +128,4 @@ struct BufferBlock {
 	}
 };
 
-}} // spark, ember
+} // spark, ember

@@ -24,7 +24,7 @@
 #include <cassert>
 #include <cstddef>
 
-namespace ember { namespace connection_pool {
+namespace ember::connection_pool {
 
 namespace sc = std::chrono;
 using namespace std::chrono_literals;
@@ -206,4 +206,4 @@ public:
 	}
 };
 
-}} // connection_pool, ember
+} // connection_pool, ember

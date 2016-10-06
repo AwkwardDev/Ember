@@ -29,7 +29,7 @@
 #include <cstddef>
 #include <cstring>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 class Logger::impl final {
 	friend class Logger;
@@ -173,4 +173,4 @@ public:
 thread_local std::pair<RecordDetail, std::vector<char>> Logger::impl::buffer_;
 thread_local Semaphore<std::mutex> Logger::impl::sem_;
 
-}} //log, ember
+} //log, ember

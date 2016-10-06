@@ -8,7 +8,7 @@
 
 #include "IntegrityData.h"
 #include <shared/util/FNVHash.h>
-#include <boost/filesystem.hpp>
+#include <filesystem>
 #include <initializer_list>
 #include <fstream>
 #include <cstddef>
@@ -41,7 +41,7 @@ IntegrityData::IntegrityData(const std::vector<GameVersion>& versions, const std
 	}
 }
 
-boost::optional<const std::vector<char>*> 
+std::optional<const std::vector<char>*> 
 IntegrityData::lookup(GameVersion version, grunt::Platform platform, grunt::System os) const {
 	auto it = data_.find(hash(version.build, platform, os));
 

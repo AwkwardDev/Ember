@@ -12,7 +12,7 @@
 #include <memory>
 #include <string>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 class Sink;
 
@@ -54,4 +54,4 @@ public:
 Logger& flush(Logger& out);
 Logger& flush_sync(Logger& out);
 
-}} //log, ember
+} //log, ember

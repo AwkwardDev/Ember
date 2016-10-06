@@ -10,7 +10,7 @@
 
 #undef ERROR 
 
-namespace ember { namespace connection_pool {
+namespace ember::connection_pool {
 
 enum class Severity {
 	DEBUG, INFO, WARN, ERROR, FATAL

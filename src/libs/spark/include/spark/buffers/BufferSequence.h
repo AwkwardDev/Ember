@@ -10,7 +10,7 @@
 #include <utility>
 #include <cstddef>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 template<typename std::size_t BlockSize>
 class ChainedBuffer;
@@ -76,4 +76,4 @@ const_iterator end() const {
 friend class const_iterator;
 };
 
-}} // spark, ember
+} // spark, ember

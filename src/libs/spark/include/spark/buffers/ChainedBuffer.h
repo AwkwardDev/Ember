@@ -16,7 +16,7 @@
 #include <utility>
 #include <cstddef>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 template<typename std::size_t BlockSize>
 class BufferSequence;
@@ -312,4 +312,4 @@ public:
 	friend class BufferSequence;
 };
 
-}} // spark, ember
+} // spark, ember

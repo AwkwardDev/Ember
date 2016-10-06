@@ -12,7 +12,7 @@
 #include <shared/database/Exception.h>
 #include <vector>
 
-namespace ember { namespace dal {
+namespace ember::dal {
 
 class PatchDAO {
 public:
@@ -21,4 +21,4 @@ public:
 	virtual ~PatchDAO() = default;
 };
 
-}} // dal, ember
+} // dal, ember

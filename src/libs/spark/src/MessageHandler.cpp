@@ -18,7 +18,7 @@
 #include <boost/uuid/uuid_io.hpp>
 #include <algorithm>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 MessageHandler::MessageHandler(const EventDispatcher& dispatcher, ServicesMap& services, const Link& link,
                                bool initiator, log::Logger* logger, log::Filter filter)
@@ -230,4 +230,4 @@ MessageHandler::~MessageHandler() {
 	}
 }
 
-}} // spark, ember
+} // spark, ember

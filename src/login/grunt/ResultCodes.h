@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <shared/smartenum.hpp>
 
-namespace ember { namespace grunt {
+namespace ember::grunt {
 
 smart_enum_class(Result, std::uint8_t,
 	SUCCESS                     = 0x00,
@@ -32,4 +32,4 @@ smart_enum_class(Result, std::uint8_t,
 	FAIL_PARENTAL_CONTROL       = 0x0F
 )
 
-}} // grunt, ember
+} // grunt, ember

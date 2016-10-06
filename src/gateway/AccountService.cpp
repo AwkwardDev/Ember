@@ -51,7 +51,7 @@ void AccountService::service_located(const messaging::multicast::LocateAnswer* m
 }
 
 void AccountService::handle_register_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-                                           boost::optional<const em::MessageRoot*> root,
+                                           std::optional<const em::MessageRoot*> root,
                                            const RegisterCB& cb) const {
 	LOG_TRACE(logger_) << __func__ << LOG_ASYNC;
 
@@ -65,7 +65,7 @@ void AccountService::handle_register_reply(const spark::Link& link, const boost:
 }
 
 void AccountService::handle_locate_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-                                         boost::optional<const messaging::MessageRoot*> root,
+                                         std::optional<const messaging::MessageRoot*> root,
                                          const SessionLocateCB& cb) const {
 	LOG_TRACE(logger_) << __func__ << LOG_ASYNC;
 
@@ -86,7 +86,7 @@ void AccountService::handle_locate_reply(const spark::Link& link, const boost::u
 }
 
 void AccountService::handle_id_locate_reply(const spark::Link& link, const boost::uuids::uuid& uuid,
-                                            boost::optional<const messaging::MessageRoot*> root,
+                                            std::optional<const messaging::MessageRoot*> root,
                                             const IDLocateCB& cb) const {
 	LOG_TRACE(logger_) << __func__ << LOG_ASYNC;
 

@@ -19,7 +19,7 @@
 namespace el = ember::log;
 namespace po = boost::program_options;
 
-namespace ember { namespace util {
+namespace ember::util {
 
 namespace {
 
@@ -85,4 +85,4 @@ std::unique_ptr<ember::log::Logger> init_logging(const po::variables_map& args) 
 	return logger;
 }
 
-}} // util, ember
+} // util, ember

@@ -11,7 +11,7 @@
 #include <logger/Logging.h>
 #include <boost/asio.hpp>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 struct Link;
 class LinkMap;
@@ -42,4 +42,4 @@ public:
 	void shutdown();
 };
 
-}} // spark, ember
+} // spark, ember

@@ -12,7 +12,7 @@
 #include <utility>
 #include <vector>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 class Sink {
 	Severity severity_;
@@ -34,4 +34,4 @@ public:
 	virtual ~Sink() = default;
 };
 
-}} //log, ember
+} //log, ember

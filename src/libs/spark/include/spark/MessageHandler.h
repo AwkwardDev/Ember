@@ -16,7 +16,7 @@
 #include <vector>
 #include <cstdint>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class NetworkSession;
 class EventDispatcher;
@@ -51,4 +51,4 @@ public:
 	void start(NetworkSession& net);
 };
 
-}} // spark, ember
+} // spark, ember

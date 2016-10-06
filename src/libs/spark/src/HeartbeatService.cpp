@@ -12,7 +12,7 @@
 #include <boost/uuid/uuid_io.hpp>
 #include <functional>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 namespace sc = std::chrono;
 
@@ -114,4 +114,4 @@ void HeartbeatService::shutdown() {
 	timer_.cancel();
 }
 
-}} // spark, ember
+} // spark, ember

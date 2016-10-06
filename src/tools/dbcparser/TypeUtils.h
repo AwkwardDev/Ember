@@ -9,7 +9,7 @@
 #pragma once
 
 #include "Types.h"
-#include <boost/optional.hpp>
+#include <optional>
 #include <utility>
 #include <string>
 #include <map>
@@ -17,9 +17,9 @@
 #include <unordered_set>
 #include <stdexcept>
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
-typedef std::pair<std::string, boost::optional<int>> TypeComponents;
+typedef std::pair<std::string, std::optional<int>> TypeComponents;
 
 TypeComponents extract_components(const std::string& type);
 std::string pascal_to_underscore(std::string name);

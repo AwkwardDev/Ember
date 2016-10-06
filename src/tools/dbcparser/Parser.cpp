@@ -13,7 +13,7 @@
 
 namespace rxml = rapidxml;
 
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 types::Key Parser::parse_field_key(rxml::xml_node<>* property) {
 	LOG_TRACE_GLOB << __func__ << LOG_ASYNC;

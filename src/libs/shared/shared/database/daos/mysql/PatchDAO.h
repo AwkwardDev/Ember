@@ -20,7 +20,7 @@
 #include <string>
 #include <vector>
 
-namespace ember { namespace dal {
+namespace ember::dal {
 
 using namespace std::chrono_literals;
 

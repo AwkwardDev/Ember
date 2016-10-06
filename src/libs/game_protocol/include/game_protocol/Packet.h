@@ -12,7 +12,7 @@
 #include <spark/SafeBinaryStream.h>
 #include <cstdint>
 
-namespace ember { namespace protocol {
+namespace ember::protocol {
 
 struct Packet {
 	enum class State {

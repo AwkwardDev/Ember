@@ -10,7 +10,7 @@
 
 #include <shared/database/Exception.h>
 #include <shared/Realm.h>
-#include <boost/optional.hpp>
+#include <optional>
 #include <string>
 #include <utility>
 #include <vector>
@@ -22,7 +22,7 @@ namespace dal {
 class RealmDAO {
 public:
 	virtual std::vector<Realm> get_realms() const = 0;
-	virtual boost::optional<Realm> get_realm(std::uint32_t id) const = 0;
+	virtual std::optional<Realm> get_realm(std::uint32_t id) const = 0;
 	virtual ~RealmDAO() = default;
 };
 

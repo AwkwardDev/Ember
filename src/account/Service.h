@@ -13,7 +13,7 @@
 #include <spark/temp/Account_generated.h>
 #include <spark/temp/MessageRoot_generated.h>
 #include <logger/Logging.h>
-#include <boost/optional.hpp>
+#include <optional>
 #include <cstdint>
 
 namespace ember {
@@ -29,7 +29,7 @@ class Service final : public spark::EventHandler {
 	void locate_session(const spark::Link& link, const messaging::MessageRoot* root);
 
 	void send_locate_reply(const spark::Link& link, const messaging::MessageRoot* root,
-	                       const boost::optional<Botan::BigInt>& key);
+	                       const std::optional<Botan::BigInt>& key);
 
 	void send_account_locate_reply(const spark::Link& link, const messaging::MessageRoot* root); // todo
 

@@ -13,7 +13,7 @@
 #include <memory>
 #include <mutex>
 
-namespace ember { namespace log {
+namespace ember::log {
 
 namespace detail {
 
@@ -24,4 +24,4 @@ extern Logger* logger_;
 Logger* get_logger();
 void set_global_logger(Logger* logger);
 
-}} //log, ember
+} //log, ember

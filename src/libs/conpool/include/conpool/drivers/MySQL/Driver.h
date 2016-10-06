@@ -22,7 +22,7 @@ class PreparedStatement;
 
 }
 
-namespace ember { namespace drivers {
+namespace ember::drivers {
 
 class MySQL {
 	typedef std::unordered_map<std::string, sql::PreparedStatement*> QueryCache;
@@ -58,4 +58,4 @@ public:
 	                     sql::PreparedStatement* value);
 };
 
-}} //drivers, ember
+} //drivers, ember

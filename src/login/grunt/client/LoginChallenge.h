@@ -20,7 +20,7 @@
 #include <cstdint>
 #include <cstddef>
 
-namespace ember { namespace grunt { namespace client {
+namespace ember::grunt::client {
 
 namespace be = boost::endian;
 
@@ -139,4 +139,4 @@ public:
 
 typedef LoginChallenge ReconnectChallenge;
 
-}}} // client, grunt, ember
+} // client, grunt, ember

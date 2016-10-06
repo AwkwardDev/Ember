@@ -12,11 +12,11 @@
 #include "Exceptions.h"
 #include <spark/Buffer.h>
 #include <logger/Logging.h>
-#include <boost/optional.hpp>
+#include <optional>
 #include <memory>
 #include <cstddef>
 
-namespace ember { namespace grunt {
+namespace ember::grunt {
 
 typedef std::unique_ptr<Packet> PacketHandle;
 
@@ -37,7 +37,7 @@ class Handler {
 public:
 	explicit Handler(log::Logger* logger) : logger_(logger) { }
 
-	boost::optional<PacketHandle> try_deserialise(spark::Buffer& buffer);
+	std::optional<PacketHandle> try_deserialise(spark::Buffer& buffer);
 };
 
-}} // grunt, ember
+} // grunt, ember

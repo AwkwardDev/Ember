@@ -15,7 +15,7 @@
 #include <string>
 #include <cstddef>
 
-namespace ember { namespace srp6 {
+namespace ember::srp6 {
 
 class Client final {
 	const Generator gen_;
@@ -35,4 +35,4 @@ public:
 	inline const Botan::BigInt& public_ephemeral() const { return A_; }
 };
 
-}} //srp6, ember
+} //srp6, ember

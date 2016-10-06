@@ -11,7 +11,7 @@
 #include <botan/bigint.h>
 #include <botan/numthry.h>
 
-namespace ember { namespace srp6 {
+namespace ember::srp6 {
 
 struct Generator {
 	enum class Group {

@@ -11,7 +11,7 @@
 #include <stdexcept>
 #include <string>
  
-namespace ember { namespace dbc {
+namespace ember::dbc {
 
 class exception : public std::runtime_error {
 public:

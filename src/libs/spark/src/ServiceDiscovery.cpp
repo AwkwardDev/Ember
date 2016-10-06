@@ -14,7 +14,7 @@
 namespace bai = boost::asio::ip;
 namespace mcast = ember::messaging::multicast;
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 ServiceDiscovery::ServiceDiscovery(boost::asio::io_service& service,
                                    std::string address, std::uint16_t port,
@@ -169,4 +169,4 @@ void ServiceDiscovery::remove_service(messaging::Service service) {
 	services_.erase(std::remove(services_.begin(), services_.end(), service), services_.end());
 }
 
-}} // spark, ember
+} // spark, ember

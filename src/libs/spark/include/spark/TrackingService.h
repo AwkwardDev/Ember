@@ -21,7 +21,7 @@
 #include <unordered_map>
 #include <mutex>
 
-namespace ember { namespace spark {
+namespace ember::spark {
 
 class TrackingService : public EventHandler {
 	struct Request {
