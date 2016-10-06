@@ -122,7 +122,7 @@ void SyslogSink::impl::write(Severity severity, Filter type, const std::vector<c
 }
 
 void SyslogSink::impl::batch_write(const std::vector<std::pair<RecordDetail, std::vector<char>>>& records) {
-	for(auto& detail, data] : records) {
+	for(auto& [detail, data] : records) {
 		write(detail.severity, detail.type, data, false);
 	}
 }
