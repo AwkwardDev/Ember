@@ -42,9 +42,9 @@ void MySQL::close(sql::Connection* conn) const {
 	auto conn_cache = locate_cache(conn);
 
 	if(conn_cache) {
-		for(auto stmt : *conn_cache) {
-			stmt.second->close();
-			delete stmt.second;
+		for(auto [k, stmt] : *conn_cache) {
+			stmt->close();
+			delete stmt;
 		}
 
 		close_cache(conn);

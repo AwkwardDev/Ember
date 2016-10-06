@@ -37,8 +37,8 @@ void Worker::process_outstanding() {
 
 	if(records < 5) {
 		for(auto& s : sinks_) {
-			for(auto& r : dequeued_) {
-				s->write(r.first.severity, r.first.type, r.second, false);
+			for(auto& [detail, data] : dequeued_) {
+				s->write(detail.severity, detail.type, data, false);
 			}
 		}
 	} else {
