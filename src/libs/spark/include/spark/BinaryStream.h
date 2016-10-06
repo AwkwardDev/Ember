@@ -33,7 +33,7 @@ public:
 	}
 
 	BinaryStream& operator <<(const std::string& data) {
-		buffer_.write(&data[0], data.size());
+		buffer_.write(data.data(), data.size());
 		char term = '\0';
 		buffer_.write(&term, 1);
 		return *this;
@@ -73,7 +73,7 @@ public:
 
 	void get(std::string& dest, std::size_t size) {
 		dest.resize(size);
-		buffer_.read(&dest[0], size); // check back in a decade - non-const data should be added by then
+		buffer_.read(dest.data(), size);
 	}
 
 	void get(void* dest, std::size_t size) {
