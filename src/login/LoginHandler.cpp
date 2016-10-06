@@ -12,7 +12,6 @@
 #include "grunt/Packets.h"
 #include <shared/metrics/Metrics.h>
 #include <shared/util/EnumHelper.h>
-#include <boost/range/adaptor/map.hpp>
 #include <stdexcept>
 #include <utility>
  
@@ -291,7 +290,7 @@ void LoginHandler::send_reconnect_challenge(FetchSessionKeyAction* action) {
 	if(status == messaging::account::Status::OK) {
 		state_ = State::RECONNECT_PROOF;
 		reconn_auth_ = std::make_unique<ReconnectAuthenticator>(user_->username(), key, checksum_salt_);
-	} else if(res.first == messaging::account::Status::SESSION_NOT_FOUND) {
+	} else if(status == messaging::account::Status::SESSION_NOT_FOUND) {
 		metrics_.increment("login_failure");
 		response.result = grunt::Result::FAIL_NOACCESS;
 		LOG_DEBUG(logger_) << "Reconnect failed, session not found for "
@@ -299,7 +298,7 @@ void LoginHandler::send_reconnect_challenge(FetchSessionKeyAction* action) {
 	} else {
 		metrics_.increment("login_internal_failure");
 		response.result = grunt::Result::FAIL_DB_BUSY;
-		LOG_ERROR(logger_) << util::fb_status(res.first, messaging::account::EnumNamesStatus())
+		LOG_ERROR(logger_) << util::fb_status(status, messaging::account::EnumNamesStatus())
 		                   << " from peer during reconnect challenge" << LOG_ASYNC;
 	}
 	
@@ -542,7 +541,7 @@ void LoginHandler::send_realm_list(const grunt::Packet* packet) {
 	}
 
 	// look the client's locale up for sending the correct realm category
-	auto region = locale_map.find(challenge_.locale);
+	const auto& [key, region] = locale_map.find(challenge_.locale);
 
 	if(region == locale_map.end() && locale_enforce_) {
 		return;
@@ -551,8 +550,8 @@ void LoginHandler::send_realm_list(const grunt::Packet* packet) {
 	grunt::server::RealmList response;
 	std::shared_ptr<const RealmMap> realms = realm_list_.realms();
 
-	for(auto& realm : *realms | boost::adaptors::map_values) {
-		if(realm.region == region->second || !locale_enforce_) {
+	for(auto& [key, realm] : *realms) {
+		if(realm.region == region || !locale_enforce_) {
 			response.realms.push_back({ realm, char_count_[realm.id] });
 		}
 	}
